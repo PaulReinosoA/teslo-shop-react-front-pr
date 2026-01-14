@@ -9,7 +9,7 @@ export const useProduct = (id: string) => {
 
   const query = useQuery({
     queryKey: ['product', { id }],
-    queryFn: () => getProductByIdActions({id}),
+    queryFn: () => getProductByIdActions({ id }),
     retry: false,
     staleTime: 1000 * 60 * 5, // 5 minutos
     // enabled: !!id
@@ -29,12 +29,13 @@ export const useProduct = (id: string) => {
     },
   });
 
-  // const handleSubmitForm = async (productLike: Partial<Product>) => {
-  //   console.log({ productLike });
-  // };
+  const handleSubmitForm = async (productLike: Partial<Product>) => {
+    console.log({ productLike });
+  };
 
   return {
     ...query,
     mutation,
+    handleSubmitForm,
   };
 };

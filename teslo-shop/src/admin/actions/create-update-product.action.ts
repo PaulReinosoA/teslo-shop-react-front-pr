@@ -1,7 +1,6 @@
-import { tesloApi } from '@/api/tesloApi';
-import type { Product } from '@/interfaces/product.interface';
-import { sleep } from '@/lib/sleep';
-
+import { tesloApi } from "@/api/teslo-api";
+import type { Product } from "@/interfaces/product.interfaces";
+import sleep from 'sleep-promise';
 
 export const createUpdateProductAction = async (
   productLike: Partial<Product>
@@ -19,7 +18,7 @@ export const createUpdateProductAction = async (
   const { data } = await tesloApi<Product>({
     url: isCreating ? '/products' : `/products/${id}`,
     method: isCreating ? 'POST' : 'PATCH',
-    data: rest,
+    data: rest as Product,
   });
 
   return {
@@ -30,11 +29,11 @@ export const createUpdateProductAction = async (
     }),
   };
 };
-function sleep(arg0: number) {
-    throw new Error("Function not implemented.");
-}
+// function sleep(arg0: number) {
+//     throw new Error("Function not implemented.");
+// }
 
-function tesloApi<T>(arg0: { url: string; method: string; data: Product; }): { data: any; } | PromiseLike<{ data: any; }> {
-    throw new Error("Function not implemented.");
-}
+// function tesloApi<T>(arg0: { url: string; method: string; data: Product; }): { data: any; } | PromiseLike<{ data: any; }> {
+//     throw new Error("Function not implemented.");
+// }
 
