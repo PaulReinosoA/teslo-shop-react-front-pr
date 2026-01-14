@@ -53,8 +53,8 @@ export const AdminProductsPage = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.products.map((product) => (
-            <TableRow key={product.id}>
+          {data!.products.map((product) => (
+            <TableRow>
               <TableCell>
                 <img
                   src={product.images[0]}

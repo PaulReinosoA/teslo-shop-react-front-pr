@@ -36,7 +36,8 @@ export const useProducts = () => {
       break;
   }
 
-  const offset = Number(page) * Number(limit);
+  let offset = Number(page) * Number(limit);
+  if (query !== '') offset = 1;
 
   console.log({ limit, offset, gender, sizes, minPrice, maxPrice, query });
   return useQuery({

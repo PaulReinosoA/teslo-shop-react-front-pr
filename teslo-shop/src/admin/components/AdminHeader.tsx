@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, type KeyboardEvent } from 'react';
 import { Search, Bell, MessageSquare, Settings } from 'lucide-react';
 import { useNavigate } from 'react-router';
 
@@ -6,10 +6,10 @@ export const AdminHeader: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  const handleSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleSearch = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key !== 'Enter') return;
 
-    const query = inputRef.current?.value || '';
+    const query = inputRef.current?.value;
     if (!query) {
       navigate('/admin/products');
       return;
