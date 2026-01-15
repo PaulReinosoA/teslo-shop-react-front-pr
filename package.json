@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@swc/core": "^1.15.8",
     "@types/node": "^24.10.4",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
@@ -50,14 +51,12 @@
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"
   },
-  
-"optionalDependencies": {
-  "@rollup/rollup-darwin-arm64": "^4.53.5",
-  "@rollup/rollup-darwin-x64": "^4.53.5",
-  "@rollup/rollup-linux-arm64-gnu": "^4.53.5",
-  "@rollup/rollup-linux-x64-gnu": "^4.53.5",
-  "@rollup/rollup-win32-arm64-msvc": "^4.53.5",
-  "@rollup/rollup-win32-x64-msvc": "^4.53.5"
-}
-
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.53.5",
+    "@rollup/rollup-darwin-x64": "^4.53.5",
+    "@rollup/rollup-linux-arm64-gnu": "^4.53.5",
+    "@rollup/rollup-linux-x64-gnu": "^4.53.5",
+    "@rollup/rollup-win32-arm64-msvc": "^4.53.5",
+    "@rollup/rollup-win32-x64-msvc": "^4.53.5"
+  }
 }
